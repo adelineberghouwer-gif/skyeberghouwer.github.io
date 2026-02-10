@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skye Berghouwer | Storyteller & Vocalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cream: #F5F8FA;
+            --deep-teal: #1A4D7A;
+            --warm-terracotta: #3B82F6;
+            --soft-sage: #93C5FD;
+            --charcoal: #1E293B;
+            --gold-accent: #60A5FA;
+            --muted-blue: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 77, 77, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        nav .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-teal);
+            letter-spacing: 1px;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--deep-teal);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: var(--deep-teal);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--deep-teal);
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--warm-terracotta);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--warm-terracotta);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, rgba(168, 184, 160, 0.1) 0%, rgba(212, 115, 94, 0.05) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(107, 142, 159, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(--deep-teal);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero-text h1 strong {
+            font-weight: 800;
+            display: block;
+            color: var(--warm-terracotta);
+        }
+
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            color: var(--muted-blue);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-text .journey {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .journey-item {
+            padding: 0.5rem 1.25rem;
+            background: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--deep-teal);
+            border: 1px solid rgba(26, 77, 77, 0.2);
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 220px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--warm-terracotta);
+            border: 2px solid var(--warm-terracotta);
+        }
+
+        .btn-primary:hover {
+            background: var(--warm-terracotta);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 115, 94, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--warm-terracotta);
+            border: 2px solid var(--warm-terracotta);
+        }
+
+        .btn-secondary:hover {
+            background: var(--warm-terracotta);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--muted-blue) 0%, var(--soft-sage) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            font-weight: 500;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10%, 10%); }
+        }
+
+        .decorative-element {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px solid var(--gold-accent);
+            border-radius: 50%;
+            bottom: -30px;
+            right: -30px;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: white;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(168, 184, 160, 0.05), transparent);
+            pointer-events: none;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            color: var(--deep-teal);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-story {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .about-story p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-story p:first-child {
+            font-size: 1.3rem;
+            color: var(--muted-blue);
+            font-weight: 300;
+        }
+
+        .about-highlights {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--warm-terracotta);
+        }
+
+        .about-highlights h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--deep-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .highlight-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-item strong {
+            color: var(--warm-terracotta);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .highlight-item span {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        /* Media Section */
+        .media {
+            padding: 8rem 5%;
+            background: linear-gradient(180deg, white 0%, var(--cream) 100%);
+        }
+
+        .media-grid {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .media-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--muted-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-teal);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .media-card:hover .play-icon {
+            transform: scale(1.1);
+        }
+
+        .media-info {
+            padding: 1.5rem;
+        }
+
+        .media-info h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--deep-teal);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .media-info p {
+            color: var(--muted-blue);
+            font-size: 0.95rem;
+        }
+
+        /* Listen Section */
+        .listen {
+            padding: 8rem 5%;
+            background: var(--deep-teal);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .listen::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .listen .section-title {
+            color: white;
+        }
+
+        .audio-players {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .audio-player {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .audio-player h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background: var(--warm-terracotta);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: #C26552;
+            transform: scale(1.05);
+        }
+
+        .waveform {
+            flex: 1;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waveform-progress {
+            height: 100%;
+            background: var(--warm-terracotta);
+            border-radius: 25px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.25rem;
+            color: var(--muted-blue);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--cream);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            min-width: 250px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--warm-terracotta);
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--deep-teal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-card a {
+            color: var(--warm-terracotta);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--deep-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .instagram-icon:hover {
+            background: #E4405F;
+        }
+
+        .youtube-icon:hover {
+            background: #FF0000;
+        }
+
+        .tiktok-icon:hover {
+            background: #000000;
+        }
+
+        .spotify-icon:hover {
+            background: #1DB954;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav ul {
+                display: none;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-selector {
+                gap: 0.5rem;
+            }
+
+            .lang-btn {
+                padding: 0.35rem 0.75rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SKYE BERGHOUWER</div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#listen">Listen</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('fr')">FR</button>
+                    <button class="lang-btn" onclick="switchLanguage('nl')">NL</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>
+                    <strong>Skye</strong>
+                    Berghouwer
+                </h1>
+                <p class="tagline">Storyteller through song. A voice that moves hearts.</p>
+                <div class="journey">
+                    <span class="journey-item">🇳🇱 Born Amsterdam</span>
+                    <span class="journey-item">🇮🇪 Raised Ireland</span>
+                    <span class="journey-item">🇺🇸 Living Florida</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#media" class="btn btn-primary">Watch Now</a>
+                    <a href="#listen" class="btn btn-secondary">Listen Now</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="image-placeholder">
+                    Your Hero Photo Here
+                </div>
+                <div class="decorative-element"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <h2 class="section-title">The Journey</h2>
+        <div class="about-content">
+            <div class="about-story">
+                <p>Every great artist has a story. Skye's begins across three continents and three languages.</p>
+                <p>Born in the artistic heart of Amsterdam, shaped by the rolling green landscapes of Ireland, and now bringing her unique voice to the sunshine state of Florida, Skye Berghouwer carries a rich tapestry of cultural influences in every note she sings.</p>
+                <p>At just 10 years old, Skye possesses a powerful voice that belies her age. But it's not just about the vocals—it's about the stories she tells. Fluent in English, French, and Dutch, she brings a rare linguistic versatility to her performances, connecting with audiences across cultures. Each song becomes a narrative, a journey that listeners can feel in their hearts.</p>
+                <p>Her multicultural background gives her a unique perspective that shines through in her performances, blending European artistry with American energy. Whether performing classics or contemporary pieces in any of her three languages, Skye transforms each song into an emotional experience, connecting with audiences through her natural storytelling ability and genuine passion for music.</p>
+            </div>
+            <div class="about-highlights">
+                <h3>At a Glance</h3>
+                <div class="highlight-item">
+                    <strong>Age</strong>
+                    <span>10 years old</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Heritage</strong>
+                    <span>Dutch-American</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Based In</strong>
+                    <span>Florida, USA</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Specialty</strong>
+                    <span>Vocal Performance & Storytelling</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Languages</strong>
+                    <span>English, French, Dutch</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media fade-in" id="media">
+        <h2 class="section-title">Performances</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="media-thumbnail">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="media-info">
+                    <h3>Featured Performance</h3>
+                    <p>Recent showcase performance demonstrating vocal range and emotional storytelling</p>
+                </div>
+            </div>
+            <div class="media-card">
+                <div class="media-thumbnail">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="media-info">
+                    <h3>Live Concert Highlight</h3>
+                    <p>Captivating the audience with powerful vocals and stage presence</p>
+                </div>
+            </div>
+            <div class="media-card">
+                <div class="media-thumbnail">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="media-info">
+                    <h3>Studio Session</h3>
+                    <p>Behind the scenes in the recording studio bringing stories to life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listen Section -->
+    <section class="listen fade-in" id="listen">
+        <h2 class="section-title">Listen</h2>
+        <div class="audio-players">
+            <div class="audio-player">
+                <h3>Original Cover</h3>
+                <p>A fresh take on a beloved classic, showcasing Skye's unique interpretation</p>
+                <div class="audio-controls">
+                    <button class="play-button" onclick="togglePlay(this)">▶</button>
+                    <div class="waveform">
+                        <div class="waveform-progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-player">
+                <h3>Recent Recording</h3>
+                <p>Latest studio recording featuring Skye's powerful storytelling voice</p>
+                <div class="audio-controls">
+                    <button class="play-button" onclick="togglePlay(this)">▶</button>
+                    <div class="waveform">
+                        <div class="waveform-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p class="contact-intro">Interested in bookings, collaborations, or just want to say hello? We'd love to hear from you.</p>
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h3>Bookings</h3>
+                    <p><a href="/cdn-cgi/l/email-protection#3e5c5151555750594d7e4d55475b5c5b4c5956514b495b4c105d5153"><span class="__cf_email__" data-cfemail="781a17171311161f0b380b13011d1a1d0a1f10170d0f1d0a561b1715">[email&#160;protected]</span></a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>General Inquiries</h3>
+                    <p><a href="/cdn-cgi/l/email-protection#96fff8f0f9d6e5fdeff3f4f3e4f1fef9e3e1f3e4b8f5f9fb"><span class="__cf_email__" data-cfemail="523b3c343d1221392b37303720353a3d272537207c313d3f">[email&#160;protected]</span></a></p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon instagram-icon" title="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon youtube-icon" title="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon tiktok-icon" title="TikTok">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon spotify-icon" title="Spotify">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Skye Berghouwer. All rights reserved.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Audio player simulation
+        function togglePlay(button) {
+            const isPlaying = button.textContent === '❚❚';
+            button.textContent = isPlaying ? '▶' : '❚❚';
+            
+            const progress = button.parentElement.querySelector('.waveform-progress');
+            if (!isPlaying) {
+                let width = 0;
+                const interval = setInterval(() => {
+                    if (width >= 100 || button.textContent === '▶') {
+                        clearInterval(interval);
+                        button.textContent = '▶';
+                        progress.style.width = '0%';
+                    } else {
+                        width += 0.5;
+                        progress.style.width = width + '%';
+                    }
+                }, 100);
+            }
+        }
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // In a real implementation, this would load translated content
+            console.log('Language switched to:', lang);
+            
+            // You can implement actual translation here by:
+            // 1. Loading translation JSON files
+            // 2. Using a translation service API
+            // 3. Swapping pre-translated HTML content
+        }
+    </script>
+</body>
+</html>
